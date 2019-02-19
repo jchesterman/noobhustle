@@ -39,7 +39,7 @@ const IndexPage = () => (
           </Typography>
           <DomainChecker />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={6}>
           <WordpressLogo />
         </Grid>
       </Grid>

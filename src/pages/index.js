@@ -70,7 +70,7 @@ const IndexPage = () => (
               <br />
               <br />
               <br />
-              <Typography>
+              <Typography variant="subtitle1">
                 While you wait, check out my tutorial on{' '}
                 <strong>
                   <Link to="tutorials/wordpress/">
