@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import WordpressLogo from '../components/image';
 import styled from '@emotion/styled';
 import {Button, Divider, Grid, Typography} from '@material-ui/core';
+import {FaCloud, FaGlobe} from 'react-icons/fa';
 import {Section} from '../components/common';
 
 const OddSection = styled.div({
@@ -49,6 +50,21 @@ const IndexPage = () => (
         <Typography variant="h3">Get your domain and hosting.</Typography>
         <br />
         <Typography color="textSecondary" variant="h6">
+          You need two things in order to have your website online:
+        </Typography>
+        <br />
+        <Typography color="textSecondary" variant="h6">
+          <FaCloud />
+          &nbsp;
+          <strong>Hosting</strong> - This is where your site will live.
+          <br />
+          <FaGlobe />
+          &nbsp;
+          <strong>Domain</strong> - This is your websites address, where people
+          will find you.
+        </Typography>
+        <br />
+        <Typography color="textSecondary" variant="h6">
           We&apos;re going to use{' '}
           <a
             href="https://www.bluehost.com/track/overcomable/"
@@ -57,10 +73,10 @@ const IndexPage = () => (
           >
             Bluehost
           </a>{' '}
-          - the web host recommended by WordPress themselves.
+          - <strong>the web host recommended by WordPress themselves</strong>.
         </Typography>
         <Typography color="textSecondary" variant="h6">
-          Right now they&apos;re having a <strong>60% off</strong> offer, which
+          Right now they&apos;re having a <strong>40% off</strong> offer, which
           includes a free domain registration.
         </Typography>
         <StyledButton
