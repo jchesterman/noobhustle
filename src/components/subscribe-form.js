@@ -140,7 +140,12 @@ class SubscribeForm extends React.Component {
             placeholder="Enter your email"
           />
           <br />
-          <StyledButton color="primary" type="submit" variant="contained">
+          <StyledButton
+            color="primary"
+            disabled={this.state.checking ? true : false}
+            type="submit"
+            variant="contained"
+          >
             Sign Up
           </StyledButton>
           {this.state.checking && (
