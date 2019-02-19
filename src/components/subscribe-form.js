@@ -125,24 +125,18 @@ class SubscribeForm extends React.Component {
     const StyledFaFrown = styled(FaFrown)({
       marginBottom: '10px'
     });
-    const StyledInput = styled(Input)({
-      marginRight: '30px',
-      marginBottom: '20px',
-      width: '65%',
-      '@media(max-width: 599px)': {
-        width: '100%'
-      }
-    });
     return (
       <>
         <form onSubmit={this._handleSubmit}>
-          <StyledInput
+          <Input
             autoFocus
             onChange={this._handleNameChange}
+            style={{marginRight: '30px', marginBottom: '20px', width: '65%'}}
             placeholder="Enter your first name"
           />
-          <StyledInput
+          <Input
             onChange={this._handleEmailChange}
+            style={{marginRight: '30px', marginBottom: '20px', width: '65%'}}
             placeholder="Enter your email"
           />
           <br />
