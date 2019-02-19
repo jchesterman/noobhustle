@@ -76,7 +76,7 @@ const IndexPage = () => (
           - <strong>the web host recommended by WordPress themselves</strong>.
         </Typography>
         <Typography color="textSecondary" variant="h6">
-          Right now they&apos;re having a <strong>40% off</strong> offer, which
+          Right now they&apos;re having a <strong>40% off</strong> sale, which
           includes a free domain registration.
         </Typography>
         <StyledButton
