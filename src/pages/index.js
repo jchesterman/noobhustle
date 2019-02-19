@@ -32,7 +32,7 @@ const IndexPage = () => (
           <Typography variant="h3">Find your name.</Typography>
           <br />
           <Typography color="textSecondary" variant="h6">
-            Pick site name, and make sure the domain is available.
+            Pick a site name, and make sure the domain is available.
           </Typography>
           <DomainChecker />
         </Grid>
