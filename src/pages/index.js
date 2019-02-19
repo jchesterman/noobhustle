@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import WordpressLogo from '../components/image';
 import styled from '@emotion/styled';
+import theme from '../themes/default';
 import {Button, Divider, Grid, Typography} from '@material-ui/core';
 import {FaCloud, FaGlobe} from 'react-icons/fa';
 import {Section} from '../components/common';
@@ -27,7 +28,8 @@ const IndexPage = () => (
       <Grid container>
         <Grid item xs={6}>
           <Typography variant="h5">
-            How to create a WordPress start from scratch, in under 10 minutes.
+            How to create a WordPress start from scratch,{' '}
+            <strong>in under 10 minutes</strong>.
           </Typography>
           <br />
           <Typography variant="h3">Find your name.</Typography>
@@ -54,11 +56,11 @@ const IndexPage = () => (
         </Typography>
         <br />
         <Typography color="textSecondary" variant="h6">
-          <FaCloud />
+          <FaCloud color={theme.palette.primary.main} />
           &nbsp;
           <strong>Hosting</strong> - This is where your site will live.
           <br />
-          <FaGlobe />
+          <FaGlobe color={theme.palette.primary.main} />
           &nbsp;
           <strong>Domain</strong> - This is your websites address, where people
           will find you.
@@ -77,7 +79,7 @@ const IndexPage = () => (
         </Typography>
         <Typography color="textSecondary" variant="h6">
           Right now they&apos;re having a <strong>40% off</strong> sale, which
-          includes a free domain registration.
+          includes a <strong>free domain registration</strong>.
         </Typography>
         <StyledButton
           color="primary"
@@ -89,6 +91,12 @@ const IndexPage = () => (
         </StyledButton>
       </Section>
     </OddSection>
+    <Section>
+      <Typography variant="h3">Install a theme.</Typography>
+      <Typography color="textSecondary" variant="h6">
+        The theme is what determines how your website looks.
+      </Typography>
+    </Section>
   </Layout>
 );
 

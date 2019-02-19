@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import theme from '../themes/default';
 import {Button, Input} from '@material-ui/core';
 import {keyframes} from '@emotion/core';
 
@@ -39,7 +40,7 @@ class DomainChecker extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        if (data.error) {
+        if (data.error || data.tld_valid === false) {
           this.setState({
             available: false,
             message:
@@ -90,7 +91,7 @@ class DomainChecker extends React.Component {
 
     const LoaderInner = styled.div({
       position: 'absolute',
-      border: '4px solid red',
+      border: `4px solid ${theme.palette.primary.main}`,
       opacity: '1',
       borderRadius: '50%',
       animation: `${ripple}  1s cubic-bezier(0, 0.2, 0.8, 1) infinite`
@@ -113,7 +114,7 @@ class DomainChecker extends React.Component {
     const Message = styled.div({
       display: 'inline-block',
       marginTop: '20px',
-      color: this.state.available ? 'green' : 'red',
+      color: this.state.available ? 'green' : theme.palette.primary.main,
       fontFamily: 'sans-serif'
     });
 
@@ -154,7 +155,11 @@ class DomainChecker extends React.Component {
             {this.state.available ? (
               <SyledFaGrinBeam color="green" size="1.5rem" style="far" />
             ) : (
-              <StyledFaFrown color="red" size="1.5rem" style="far" />
+              <StyledFaFrown
+                color={theme.palette.primary.main}
+                size="1.5rem"
+                style="far"
+              />
             )}
             <Message dangerouslySetInnerHTML={{__html: this.state.message}} />
           </div>
