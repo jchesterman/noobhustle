@@ -129,6 +129,7 @@ class DomainChecker extends React.Component {
       <div>
         <form onSubmit={this.CheckAvailability}>
           <Input
+            autoComplete="off"
             style={{marginTop: '15px', width: '300px', fontSize: '1.4rem'}}
             autoFocus
             name="dName"
