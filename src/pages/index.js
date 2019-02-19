@@ -17,6 +17,10 @@ const FeatureContain = styled(Grid)({
   alignItems: 'center',
   justifyContent: 'center',
   height: '100vh',
+  '@media(max-width: 599px)': {
+    height: 'auto',
+    padding: '100px 0'
+  },
   '&:nth-of-type(2)': {
     borderLeft: '1px solid #ddd',
     backgroundColor: '#f5f5f5'
@@ -49,14 +53,14 @@ const IndexPage = () => (
       <Layout header={false}>
         <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
         <Grid container>
-          <FeatureContain item xs={6}>
+          <FeatureContain item xs={12} sm={6}>
             <LogoContain>
               <Logo>
                 <Img fluid={data.imageOne.childImageSharp.fluid} />
               </Logo>
             </LogoContain>
           </FeatureContain>
-          <FeatureContain item xs={6}>
+          <FeatureContain item xs={12} sm={6}>
             <SignUpContain>
               <Typography variant="h1">Site is launching soon!</Typography>
               <br />

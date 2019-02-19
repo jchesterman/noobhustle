@@ -69,7 +69,7 @@ class SubscribeForm extends React.Component {
     fetch(proxyUrl + targetUrl, {
       method: 'POST',
       headers: {
-        'X-Auth-Token': 'api-key d442fa714898cedbff7f6f755dfbdc79',
+        'X-Auth-Token': `api-key ${process.env.GETRESPONSE_API_KEY}`,
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
@@ -125,18 +125,24 @@ class SubscribeForm extends React.Component {
     const StyledFaFrown = styled(FaFrown)({
       marginBottom: '10px'
     });
+    const StyledInput = styled(Input)({
+      marginRight: '30px',
+      marginBottom: '20px',
+      width: '65%',
+      '@media(max-width: 599px)': {
+        width: '100%'
+      }
+    });
     return (
       <>
         <form onSubmit={this._handleSubmit}>
-          <Input
+          <StyledInput
             autoFocus
             onChange={this._handleNameChange}
-            style={{marginRight: '30px', marginBottom: '20px', width: '65%'}}
             placeholder="Enter your first name"
           />
-          <Input
+          <StyledInput
             onChange={this._handleEmailChange}
-            style={{marginRight: '30px', marginBottom: '20px', width: '65%'}}
             placeholder="Enter your email"
           />
           <br />

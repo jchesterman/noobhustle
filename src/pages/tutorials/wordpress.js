@@ -18,7 +18,12 @@ const StyledButton = styled(Button)({
   textTransform: 'none',
   marginTop: '20px',
   fontSize: '1.5rem',
-  marginBottom: '16px'
+  marginBottom: '16px',
+  '@media(max-width: 599px)': {
+    width: '100%',
+    padding: '1rem',
+    lineHeight: '2rem'
+  }
 });
 
 const IndexPage = () => (
@@ -26,7 +31,7 @@ const IndexPage = () => (
     <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
     <Section>
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Typography variant="h5">
             How to create a WordPress start from scratch,{' '}
             <strong>in under 10 minutes</strong>.
@@ -39,7 +44,7 @@ const IndexPage = () => (
           </Typography>
           <DomainChecker />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <WordpressLogo />
         </Grid>
       </Grid>
@@ -69,7 +74,7 @@ const IndexPage = () => (
         <Typography color="textSecondary" variant="h6">
           We&apos;re going to use{' '}
           <a
-            href="https://www.bluehost.com/track/overcomable/"
+            href={process.env.BLUEHOST_AFFILIATE_LINK}
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -83,7 +88,7 @@ const IndexPage = () => (
         </Typography>
         <StyledButton
           color="primary"
-          href="https://www.bluehost.com/track/overcomable/"
+          href={process.env.BLUEHOST_AFFILIATE_LINK}
           target="_blank"
           variant="contained"
         >
