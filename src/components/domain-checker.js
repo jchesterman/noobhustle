@@ -24,6 +24,7 @@ class DomainChecker extends React.Component {
   }
 
   CheckAvailability() {
+    event.preventDefault();
     this.setState({checking: true, message: false});
     fetch('https://domainstatus.p.rapidapi.com/', {
       method: 'POST',
@@ -126,29 +127,27 @@ class DomainChecker extends React.Component {
 
     return (
       <div>
-        <Input
-          style={{marginTop: '15px', width: '300px', fontSize: '1.4rem'}}
-          autoFocus
-          name="dName"
-          onChange={this.setDomainState}
-          placeholder="noobhustle.com"
-        />
-        <br />
-        <StyledButton
-          color="primary"
-          onClick={this.CheckAvailability}
-          variant="contained"
-        >
-          Check Availability
-        </StyledButton>
-        {this.state.checking ? (
-          <Loader>
-            <LoaderInner />
-            <LoaderInner />
-          </Loader>
-        ) : (
-          <div />
-        )}
+        <form onSubmit={this.CheckAvailability}>
+          <Input
+            style={{marginTop: '15px', width: '300px', fontSize: '1.4rem'}}
+            autoFocus
+            name="dName"
+            onChange={this.setDomainState}
+            placeholder="noobhustle.com"
+          />
+          <br />
+          <StyledButton color="primary" type="submit" variant="contained">
+            Check Availability
+          </StyledButton>
+          {this.state.checking ? (
+            <Loader>
+              <LoaderInner />
+              <LoaderInner />
+            </Loader>
+          ) : (
+            <div />
+          )}
+        </form>
         {this.state.message && (
           <div>
             {this.state.available ? (
