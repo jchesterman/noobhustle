@@ -24,12 +24,12 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
     <Section>
-      <Typography variant="h5">
-        How to create a WordPress start from scratch, in under 10 minutes.
-      </Typography>
-      <br />
       <Grid container>
         <Grid item xs={6}>
+          <Typography variant="h5">
+            How to create a WordPress start from scratch, in under 10 minutes.
+          </Typography>
+          <br />
           <Typography variant="h3">Find your name.</Typography>
           <br />
           <Typography color="textSecondary" variant="h6">
