@@ -3,9 +3,7 @@ const {createMuiTheme} = require('@material-ui/core/styles');
 module.exports = createMuiTheme({
   typography: {
     useNextVariants: true,
-    //fontFamily: '"Libre Franklin", serif',
     h1: {
-      //fontFamily: '"Roboto Slab", serif',
       fontSize: '3rem',
       fontWeight: '400'
     },

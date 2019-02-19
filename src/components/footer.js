@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
+import {Typography} from '@material-ui/core';
 
 const FooterWrap = styled.div({
   backgroundColor: theme.palette.primary.main,
@@ -17,7 +18,11 @@ const Footer = styled.div({
 const FooterComponent = () => (
   <FooterWrap>
     <Footer>
-      <footer>© {new Date().getFullYear()} Noob Hustle</footer>
+      <footer>
+        <Typography variant="body1" color="secondary">
+          © {new Date().getFullYear()} Noob Hustle
+        </Typography>
+      </footer>
     </Footer>
   </FooterWrap>
 );
