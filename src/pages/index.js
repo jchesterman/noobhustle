@@ -3,8 +3,9 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import SubscribeForm from '../components/subscribe-form';
 import styled from '@emotion/styled';
-import {Button, Grid, Input, Typography} from '@material-ui/core';
+import {Grid, Typography} from '@material-ui/core';
 import {Link, StaticQuery, graphql} from 'gatsby';
 
 const Logo = styled.div({
@@ -65,13 +66,7 @@ const IndexPage = () => (
                 Be the first to know by signing up.
               </Typography>
               <br />
-              <Input
-                style={{marginRight: '30px', width: '50%'}}
-                placeholder="Enter your email"
-              />
-              <Button color="primary" variant="contained">
-                Sign Up
-              </Button>
+              <SubscribeForm />
               <br />
               <br />
               <br />

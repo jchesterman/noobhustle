@@ -31,6 +31,7 @@ module.exports = createMuiTheme({
     }
   },
   status: {
+    success: 'green',
     danger: 'orange'
   }
 });

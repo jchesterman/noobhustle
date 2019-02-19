@@ -8,6 +8,7 @@
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "@material-ui/core": "^3.9.2",
+    "email-validator": "^2.0.4",
     "emotion": "^10.0.7",
     "gatsby": "^2.1.4",
     "gatsby-image": "^2.0.29",
