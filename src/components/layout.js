@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import theme from '../themes/default';
+import {Global, css} from '@emotion/core';
 import {StaticQuery, graphql} from 'gatsby';
 
 import Footer from './footer';
@@ -18,6 +20,13 @@ const Layout = ({header, children}) => (
     `}
     render={data => (
       <>
+        <Global
+          styles={css`
+            a {
+              color: ${theme.palette.primary.main};
+            }
+          `}
+        />
         {header && <Header siteTitle={data.site.siteMetadata.title} />}
         <div
           style={{
