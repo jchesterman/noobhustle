@@ -2,18 +2,24 @@ import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
 
-const FooterContain = styled.div({
+const FooterWrap = styled.div({
+  backgroundColor: theme.palette.primary.main,
+  width: '100%'
+});
+
+const Footer = styled.div({
   maxWidth: '1160px',
   margin: '0 auto',
   padding: '40px',
-  backgroundColor: theme.palette.primary.main,
   color: '#fff'
 });
 
-const Footer = () => (
-  <FooterContain>
-    <footer>© {new Date().getFullYear()} Noob Hustle</footer>
-  </FooterContain>
+const FooterComponent = () => (
+  <FooterWrap>
+    <Footer>
+      <footer>© {new Date().getFullYear()} Noob Hustle</footer>
+    </Footer>
+  </FooterWrap>
 );
 
-export default Footer;
+export default FooterComponent;
