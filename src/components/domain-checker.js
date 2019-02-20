@@ -1,10 +1,10 @@
+import CircularProgress from '@material-ui/core/CircularProgress';
 import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
 import {Button, Input} from '@material-ui/core';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-import Loader from './loader';
 import {
   FaClipboard,
   FaClipboardCheck,
@@ -113,6 +113,12 @@ class DomainChecker extends React.Component {
       left: '34px'
     });
 
+    const Loader = styled(CircularProgress)({
+      position: 'relative',
+      left: '30px',
+      top: '18px'
+    });
+
     return (
       <div>
         <form onSubmit={this.CheckAvailability}>
@@ -128,7 +134,7 @@ class DomainChecker extends React.Component {
           <StyledButton color="primary" type="submit" variant="contained">
             Check Availability
           </StyledButton>
-          {this.state.checking && <Loader />}
+          {this.state.checking && <Loader color="primary" />}
           {this.state.available && !this.state.checking && !this.state.copied && (
             <CopyToClipboard onCopy={this.onCopy} text={this.state.domain}>
               <StyledFaClipboard

@@ -1,4 +1,4 @@
-import Loader from './loader';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
@@ -113,10 +113,10 @@ class SubscribeForm extends React.Component {
       color: this.state.success ? 'green' : theme.palette.primary.main
     });
     const LoaderContain = styled.div({
-      position: 'relative',
+      position: 'absolute',
       float: 'left',
-      left: '120px',
-      top: '-25px'
+      marginTop: '-60px',
+      marginLeft: '140px'
     });
     const SyledFaGrinBeam = styled(FaGrinBeam)({
       marginBottom: '10px'
@@ -150,7 +150,7 @@ class SubscribeForm extends React.Component {
           </StyledButton>
           {this.state.checking && (
             <LoaderContain>
-              <Loader />
+              <CircularProgress color="primary" />
             </LoaderContain>
           )}
         </form>
