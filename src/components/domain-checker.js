@@ -63,7 +63,7 @@ class DomainChecker extends React.Component {
         } else if (data.available === true) {
           const message = `Great! <strong>${
             this.state.domain
-          }</strong> is available! <br/><span style="font-weight: 600; font-size: 0.8rem; font-style: italic;">Click to green icon above to copy the domain, and continue to step 2 below</span>`;
+          }</strong> is available! <br/><span style="font-weight: 600; font-size: 0.8rem; font-style: italic;">Click the clipboard above to copy the domain, and continue to step 2 below</span>`;
           this.setState({checking: false, available: true, message});
         } else {
           const message = `Aw dang! <strong>${
