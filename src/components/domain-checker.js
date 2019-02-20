@@ -2,31 +2,44 @@ import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
 import {Button, Input} from '@material-ui/core';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import Loader from './loader';
-import {FaFrown, FaGrinBeam} from 'react-icons/fa';
+import {
+  FaClipboard,
+  FaClipboardCheck,
+  FaFrown,
+  FaGrinBeam
+} from 'react-icons/fa';
 
 class DomainChecker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       available: false,
-      message: false,
+      copied: false,
+      message: null,
       domain: '',
       checking: false
     };
 
     this.setDomainState = this.setDomainState.bind(this);
+    this.onClick = this.onClick.bind(this);
     this.CheckAvailability = this.CheckAvailability.bind(this);
   }
 
+  onClick() {
+    this.setState({copied: true});
+  }
+
   setDomainState(event) {
+    this.setState({copied: false, message: null});
     this.setState({domain: event.target.value});
   }
 
   CheckAvailability() {
     event.preventDefault();
-    this.setState({checking: true, message: false});
+    this.setState({checking: true, copied: false, message: false});
     fetch('https://domainstatus.p.rapidapi.com/', {
       method: 'POST',
       headers: {
@@ -50,7 +63,7 @@ class DomainChecker extends React.Component {
         } else if (data.available === true) {
           const message = `Great! <strong>${
             this.state.domain
-          }</strong> is available! <br/><span style="font-weight: 600; font-size: 0.8rem; font-style: italic;">Continue to Step 2 below</span>`;
+          }</strong> is available! <br/><span style="font-weight: 600; font-size: 0.8rem; font-style: italic;">Click to green icon above to copy the domain, and continue to step 2 below</span>`;
           this.setState({checking: false, available: true, message});
         } else {
           const message = `Aw dang! <strong>${
@@ -87,6 +100,20 @@ class DomainChecker extends React.Component {
       marginRight: '10px'
     });
 
+    const StyledFaClipboard = styled(FaClipboard)({
+      position: 'relative',
+      top: '16px',
+      left: '34px',
+      cursor: 'pointer'
+    });
+
+    const StyledFaClipboardCheck = styled(FaClipboardCheck)({
+      position: 'relative',
+      top: '16px',
+      left: '34px',
+      cursor: 'pointer'
+    });
+
     return (
       <div>
         <form onSubmit={this.CheckAvailability}>
@@ -103,6 +130,19 @@ class DomainChecker extends React.Component {
             Check Availability
           </StyledButton>
           {this.state.checking && <Loader />}
+          {this.state.available && !this.state.checking && !this.state.copied && (
+            <CopyToClipboard onCopy={this.onCopy} text={this.state.domain}>
+              <StyledFaClipboard
+                onClick={this.onClick}
+                color="grey"
+                size="2.5rem"
+                style="far"
+              />
+            </CopyToClipboard>
+          )}
+          {this.state.copied && (
+            <StyledFaClipboardCheck color="green" size="2.5rem" style="far" />
+          )}
         </form>
         {this.state.message && (
           <div>
@@ -116,6 +156,14 @@ class DomainChecker extends React.Component {
               />
             )}
             <Message dangerouslySetInnerHTML={{__html: this.state.message}} />
+            {this.state.copied && (
+              <>
+                <br />
+                <Message>
+                  {this.state.domain} was copied to the clipboard
+                </Message>
+              </>
+            )}
           </div>
         )}
       </div>
