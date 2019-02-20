@@ -110,8 +110,7 @@ class DomainChecker extends React.Component {
     const StyledFaClipboardCheck = styled(FaClipboardCheck)({
       position: 'relative',
       top: '16px',
-      left: '34px',
-      cursor: 'pointer'
+      left: '34px'
     });
 
     return (
