@@ -29,11 +29,13 @@ const FeatureContain = styled(Grid)({
 
 const LogoContain = styled.div({
   display: 'block',
-  width: '65%'
+  width: '65%',
+  maxWidth: '600px'
 });
 
 const SignUpContain = styled.div({
-  padding: '20px 60px'
+  padding: '20px 60px',
+  maxWidth: '700px'
 });
 
 const IndexPage = () => (
@@ -77,11 +79,26 @@ const IndexPage = () => (
               <Typography variant="subtitle1">
                 While you wait, check out my tutorial on{' '}
                 <strong>
-                  <Link to="tutorials/wordpress/">
+                  <Link to="/tutorials/wordpress/">
                     how to make a WordPress website in under 10 minutes
                   </Link>
                 </strong>
                 .
+              </Typography>
+              <br />
+              <Typography variant="subtitle1">
+                You can also check me out on{' '}
+                <strong>
+                  <a
+                    href="https://www.youtube.com/NoobHustle"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    YouTube
+                  </a>
+                </strong>
+                , where I show my journey into learning how to build an income
+                online.
               </Typography>
             </SignUpContain>
           </FeatureContain>

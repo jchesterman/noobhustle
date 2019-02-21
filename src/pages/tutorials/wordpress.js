@@ -56,7 +56,11 @@ const IndexPage = () => (
       <Section>
         <Typography variant="h3">Get your domain and hosting.</Typography>
         <br />
-        <Typography color="textSecondary" variant="h6">
+        <Typography
+          color="textSecondary"
+          style={{fontWeight: 'bold'}}
+          variant="h6"
+        >
           You need two things in order to have your website online:
         </Typography>
         <br />
@@ -83,8 +87,24 @@ const IndexPage = () => (
           - <strong>the web host recommended by WordPress themselves</strong>.
         </Typography>
         <Typography color="textSecondary" variant="h6">
-          Right now they&apos;re having a <strong>40% off</strong> sale, which
-          includes a <strong>free domain registration</strong>.
+          Right now they&apos;re having a{' '}
+          <strong>
+            <a
+              href={process.env.BLUEHOST_AFFILIATE_LINK}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              60% off
+            </a>
+          </strong>{' '}
+          sale, which includes a <strong>free domain registration</strong>.
+        </Typography>
+        <br />
+        <Typography color="textSecondary" variant="subtitle1">
+          <em>
+            *Bluehost WordPress hosting has automatic WordPress install,
+            <br /> so you won&apos;t need to worry about installing it yourself.
+          </em>
         </Typography>
         <StyledButton
           color="primary"
@@ -92,14 +112,25 @@ const IndexPage = () => (
           target="_blank"
           variant="contained"
         >
-          Get Hosting &amp; Free Domain
+          Get WordPress Hosting &amp; Free Domain
         </StyledButton>
       </Section>
     </OddSection>
     <Section>
-      <Typography variant="h3">Install a theme.</Typography>
-      <Typography color="textSecondary" variant="h6">
+      <Typography variant="h3">Install Astra theme.</Typography>
+      <br />
+      <Typography
+        color="textSecondary"
+        style={{fontWeight: 'bold'}}
+        variant="h6"
+      >
         The theme is what determines how your website looks.
+      </Typography>
+      <br />
+      <Typography color="textSecondary" variant="h6">
+        Astra is an extremely powerful, and user-friendly WordPress theme
+        <br />
+        that is going to allow you to easily customize your website.
       </Typography>
     </Section>
   </Layout>
