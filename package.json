@@ -26,6 +26,7 @@
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.4.0",
+    "react-player": "^1.9.3",
     "typeface-libre-franklin": "0.0.54",
     "typeface-roboto": "0.0.54",
     "typeface-roboto-slab": "0.0.54"

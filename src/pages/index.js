@@ -79,7 +79,7 @@ const IndexPage = () => (
               <Typography variant="subtitle1">
                 While you wait, check out my tutorial on{' '}
                 <strong>
-                  <Link to="/tutorials/wordpress/">
+                  <Link to="/tutorials/how-to-make-a-website/">
                     how to make a WordPress website in under 10 minutes
                   </Link>
                 </strong>

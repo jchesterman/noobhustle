@@ -9,7 +9,7 @@ const FooterWrap = styled.div({
 });
 
 const Footer = styled.div({
-  maxWidth: '1160px',
+  maxWidth: '1440px',
   margin: '0 auto',
   padding: '40px',
   color: '#fff'

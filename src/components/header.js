@@ -27,7 +27,7 @@ const Header = () => (
           style={{
             margin: '0 auto',
             width: '100%',
-            maxWidth: 1160,
+            maxWidth: 1440,
             padding: '1.45rem 1.0875rem'
           }}
         >
