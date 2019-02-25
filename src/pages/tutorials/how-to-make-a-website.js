@@ -213,14 +213,12 @@ class IndexPage extends React.Component {
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        Bluehost
+                        GoDaddy
                       </a>{' '}
-                      -{' '}
-                      <strong>
-                        the web host recommended by WordPress themselves
-                      </strong>
-                      .
+                      managed WordPress hosting, which includes automatic
+                      WordPress installation .
                     </Typography>
+                    <br />
                     <Typography color="textSecondary" variant="h6">
                       Right now they&apos;re having a{' '}
                       <strong>
@@ -229,21 +227,14 @@ class IndexPage extends React.Component {
                           rel="noopener noreferrer"
                           target="_blank"
                         >
-                          60% off
+                          $1/month promotion
                         </a>
                       </strong>{' '}
                       sale, which includes a{' '}
                       <strong>free domain registration</strong>.
                     </Typography>
                     <br />
-                    <Typography color="textSecondary" variant="subtitle1">
-                      <em>
-                        *Bluehost WordPress hosting has automatic WordPress
-                        install,
-                        <br /> so you won&apos;t need to worry about installing
-                        it yourself.
-                      </em>
-                    </Typography>
+
                     <StyledButton
                       color="primary"
                       href={process.env.BLUEHOST_AFFILIATE_LINK}
