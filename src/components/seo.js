@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 
-function SEO({description, lang, meta, keywords, title}) {
+function SEO({description, googleVerification, lang, meta, keywords, title}) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -21,6 +21,10 @@ function SEO({description, lang, meta, keywords, title}) {
               {
                 name: 'description',
                 content: metaDescription
+              },
+              {
+                name: 'google-site-verification',
+                content: googleVerification
               },
               {
                 property: 'og:title',
@@ -75,6 +79,7 @@ SEO.defaultProps = {
 
 SEO.propTypes = {
   description: PropTypes.string,
+  googleVerification: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),

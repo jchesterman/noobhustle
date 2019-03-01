@@ -53,7 +53,11 @@ const IndexPage = () => (
     `}
     render={data => (
       <Layout header={false}>
-        <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
+        <SEO
+          title="Home"
+          googleVerification="Gvi35bpq4tFgSUgh7jEa4gBMXZtjVnQ70KwJRUkrBiA"
+          keywords={['gatsby', 'application', 'react']}
+        />
         <Grid container>
           <FeatureContain item xs={12} sm={6}>
             <LogoContain>
