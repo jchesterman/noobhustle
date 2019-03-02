@@ -153,7 +153,7 @@ class IndexPage extends React.Component {
                     <Typography color="textSecondary" variant="subtitle1">
                       *This page was put together to go along with{' '}
                       <a
-                        href="https://www.youtube.com/NoobHustle"
+                        href="https://www.youtube.com/watch?v=m4EN5inJAfI"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -474,7 +474,7 @@ class IndexPage extends React.Component {
                           This tutorial is a follow-along with{' '}
                           <strong>
                             <a
-                              href="https://www.youtube.com/NoobHustle"
+                              href="https://www.youtube.com/watch?v=m4EN5inJAfI"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
@@ -485,7 +485,7 @@ class IndexPage extends React.Component {
                           at all,{' '}
                           <strong>
                             <a
-                              href="https://www.youtube.com/NoobHustle"
+                              href="https://www.youtube.com/watch?v=m4EN5inJAfI"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
