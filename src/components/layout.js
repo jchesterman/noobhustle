@@ -1,11 +1,11 @@
+import Footer from './footer';
+import Header from './header';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
 import theme from '../themes/default';
 import {Global, css} from '@emotion/core';
 import {StaticQuery, graphql} from 'gatsby';
-
-import Footer from './footer';
-import Header from './header';
 
 const Layout = ({header, children}) => (
   <StaticQuery
@@ -20,6 +20,9 @@ const Layout = ({header, children}) => (
     `}
     render={data => (
       <>
+        <Helmet>
+          <script src="//platform-api.sharethis.com/js/sharethis.js#property=5cb0a6ba918ee800121206ec&product=custom-share-buttons" />
+        </Helmet>
         <Global
           styles={css`
             a {
@@ -33,7 +36,7 @@ const Layout = ({header, children}) => (
             margin: '0 auto'
           }}
         >
-          <main>{children}</main>
+          <main style={{minHeight: '85vh'}}>{children}</main>
           <Footer />
         </div>
       </>
