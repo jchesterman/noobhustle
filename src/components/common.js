@@ -7,6 +7,6 @@ export const Section = styled.section({
   margin: '0 auto',
   padding: `${theme.spacing.unit * 8}px 1.0875rem`,
   [smDownBreakpoint]: {
-    padding: theme.spacing.unit * 5
+    padding: '20px'
   }
 });
