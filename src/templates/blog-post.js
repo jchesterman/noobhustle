@@ -87,7 +87,7 @@ class BlogPost extends Component {
         <SEO title={metaTitle ? metaTitle : title} />
         <Section>
           <Grid container spacing={40}>
-            <Grid item xs={8}>
+            <Grid item sm={8} xs={12}>
               <PostHeading variant="h1">{title}</PostHeading>
               <Typography paragraph>{createdAt}</Typography>
               <Share
@@ -114,7 +114,7 @@ class BlogPost extends Component {
                 config={disqusConfig}
               />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item sm={4} xs={12}>
               <NewsletterContain>
                 <Typography gutterBottom variant="subtitle2">
                   <strong>ENJOY THIS CONTENT?</strong>

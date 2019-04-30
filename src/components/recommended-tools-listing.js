@@ -28,10 +28,13 @@ const CompanyLogo = styled.img({
 const FeatureContain = styled(Grid)({
   '@media(max-width: 599px)': {
     height: 'auto',
-    padding: '100px 0'
+    marginBottom: '20px'
   },
   '&:nth-of-type(2)': {
-    paddingLeft: '40px'
+    paddingLeft: '40px',
+    '@media(max-width: 599px)': {
+      paddingLeft: '0'
+    }
   }
 });
 

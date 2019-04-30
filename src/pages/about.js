@@ -105,14 +105,14 @@ class About extends React.Component {
         >
           <AboutContainer>
             <Grid container spacing={16}>
-              <Grid item xs={4} sm={4}>
+              <Grid item xs={12} sm={4}>
                 <Img fluid={this.props.data.imageOne.childImageSharp.fluid} />
                 <br />
                 <Img fluid={this.props.data.imageTwo.childImageSharp.fluid} />
                 <br />
                 <Img fluid={this.props.data.imageThree.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={8} sm={8}>
+              <Grid item xs={12} sm={8}>
                 <StyledContent>
                   {renderAst(
                     this.props.data.allContentfulAbout.edges[0].node.body

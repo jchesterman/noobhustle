@@ -1,3 +1,4 @@
+import Hidden from '@material-ui/core/Hidden';
 import Img from 'gatsby-image';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
@@ -64,32 +65,34 @@ const Header = () => (
               <Img fluid={data.imageOne.childImageSharp.fluid} />
             </Link>
           </Logo>
-          <MainMenu style={{marginTop: '20px'}}>
-            <MainMenuItem
-              activeStyle={{borderBottom: '1px solid #fff'}}
-              to="/income-reports"
-            >
-              Income Reports
-            </MainMenuItem>
-            <MainMenuItem
-              activeStyle={{borderBottom: '1px solid #fff'}}
-              to="/recommended-tools"
-            >
-              Recommended Tools
-            </MainMenuItem>
-            <MainMenuItem
-              activeStyle={{borderBottom: '1px solid #fff'}}
-              to="/blog"
-            >
-              Blog
-            </MainMenuItem>
-            <MainMenuItem
-              activeStyle={{borderBottom: '1px solid #fff'}}
-              to="/about"
-            >
-              About
-            </MainMenuItem>
-          </MainMenu>
+          <Hidden smDown implementation="css">
+            <MainMenu style={{marginTop: '-30px'}}>
+              <MainMenuItem
+                activeStyle={{borderBottom: '1px solid #fff'}}
+                to="/income-reports"
+              >
+                Income Reports
+              </MainMenuItem>
+              <MainMenuItem
+                activeStyle={{borderBottom: '1px solid #fff'}}
+                to="/recommended-tools"
+              >
+                Recommended Tools
+              </MainMenuItem>
+              <MainMenuItem
+                activeStyle={{borderBottom: '1px solid #fff'}}
+                to="/blog"
+              >
+                Blog
+              </MainMenuItem>
+              <MainMenuItem
+                activeStyle={{borderBottom: '1px solid #fff'}}
+                to="/about"
+              >
+                About
+              </MainMenuItem>
+            </MainMenu>
+          </Hidden>
         </div>
       </div>
     )}

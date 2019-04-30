@@ -48,7 +48,10 @@ class Share extends React.Component {
 
     const ShareText = styled(Typography)({
       float: 'right',
-      color: theme.palette.secondary.light
+      color: theme.palette.secondary.light,
+      '@media(max-width: 599px)': {
+        display: 'none'
+      }
     });
 
     const ShareIcon = styled.span({

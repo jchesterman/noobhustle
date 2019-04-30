@@ -16,7 +16,7 @@ class AltHero extends React.Component {
     const FeatureContain = styled(Grid)({
       '@media(max-width: 599px)': {
         height: 'auto',
-        padding: '100px 0'
+        padding: '0'
       },
       '&:nth-of-type(2)': {
         margin: '0 auto',
@@ -58,11 +58,12 @@ class AltHero extends React.Component {
                   <FeatureContain item xs={12} sm={6}>
                     {this.props.children}
                   </FeatureContain>
+                  <Grid item style={{marginBottom: '40px'}} xs={12} sm={2} />
                   <FeatureContain
                     item
                     xs={12}
-                    sm={6}
-                    style={{padding: '0 120px', textAlign: 'center'}}
+                    sm={4}
+                    style={{textAlign: 'center'}}
                   >
                     <Typography
                       style={{marginBottom: '20px'}}

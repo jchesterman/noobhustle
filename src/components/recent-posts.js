@@ -7,7 +7,10 @@ import {Link} from 'gatsby';
 
 const PostItem = styled.div({
   textAlign: 'left',
-  marginBottom: '40px'
+  marginBottom: '40px',
+  '@media(max-width: 599px)': {
+    marginBottom: '0'
+  }
 });
 
 const PostImage = styled.img({
@@ -18,10 +21,13 @@ const PostImage = styled.img({
 const FeatureContain = styled(Grid)({
   '@media(max-width: 599px)': {
     height: 'auto',
-    padding: '100px 0'
+    marginBottom: '20px'
   },
   '&:nth-of-type(2)': {
-    paddingLeft: '40px'
+    paddingLeft: '40px',
+    '@media(max-width: 599px)': {
+      paddingLeft: '0'
+    }
   }
 });
 

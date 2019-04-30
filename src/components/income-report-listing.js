@@ -14,16 +14,22 @@ const PostItem = styled.div({
 
 const PostImage = styled.img({
   display: 'flex',
-  width: '100%'
+  width: '100%',
+  '@media(max-width: 599px)': {
+    marginBottom: '0'
+  }
 });
 
 const FeatureContain = styled(Grid)({
   '@media(max-width: 599px)': {
     height: 'auto',
-    padding: '100px 0'
+    marginBottom: '20px'
   },
   '&:nth-of-type(2)': {
-    paddingLeft: '40px'
+    paddingLeft: '40px',
+    '@media(max-width: 599px)': {
+      paddingLeft: '0px'
+    }
   }
 });
 

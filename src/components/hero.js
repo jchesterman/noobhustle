@@ -34,8 +34,7 @@ class Hero extends React.Component {
   render() {
     const FeatureContain = styled(Grid)({
       '@media(max-width: 599px)': {
-        height: 'auto',
-        padding: '100px 0'
+        height: 'auto'
       },
       '&:nth-of-type(2)': {
         margin: '0 auto',
@@ -247,11 +246,12 @@ class Hero extends React.Component {
                       </Typography>
                     </a>
                   </FeatureContain>
+                  <Grid item style={{marginBottom: '40px'}} xs={12} sm={2} />
                   <FeatureContain
                     item
                     xs={12}
-                    sm={6}
-                    style={{padding: '0 120px', textAlign: 'center'}}
+                    sm={4}
+                    style={{textAlign: 'center'}}
                   >
                     <Typography
                       style={{marginBottom: '20px'}}
