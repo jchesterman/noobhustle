@@ -105,25 +105,6 @@ module.exports = {
           //exclude: ['/preview/**', '/do-not-track/me/too/']
         }
       }
-    },
-    {
-      resolve: 'gatsby-plugin-lunr-search',
-      options: {
-        // Lunr reference
-        ref: 'id',
-
-        // Fields to be indexed
-        fields: ['title'],
-
-        // Nodes to be indexed
-        resolvers: {
-          // Index all `MarkdownRemark` nodes
-          ContentfulBlogPost: {
-            id: node => node.id,
-            title: node => node.title
-          }
-        }
-      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
