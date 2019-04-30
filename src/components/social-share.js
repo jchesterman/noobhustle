@@ -70,7 +70,7 @@ class Share extends React.Component {
 
     return (
       <div>
-        <ShareCount>
+        <ShareCount style={{display: 'none'}}>
           <Typography color="primary" variant="h5">
             {this.state.totalShares} shares
           </Typography>
