@@ -11,7 +11,7 @@ const FooterWrap = styled.div({
 const Footer = styled.div({
   maxWidth: '1440px',
   margin: '0 auto',
-  padding: '40px',
+  padding: '40px 1.0875rem',
   color: '#fff'
 });
 

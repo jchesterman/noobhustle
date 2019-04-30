@@ -4,14 +4,52 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
+let contentfulOptions = {};
+
+if (process.env.CONTEXT === 'production') {
+  contentfulOptions = {
+    spaceId: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_TOKEN,
+    host: process.env.CONTENTFUL_HOST
+  };
+} else {
+  contentfulOptions = {
+    spaceId: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
+    host: process.env.CONTENTFUL_PREVIEW_HOST
+  };
+}
+
 module.exports = {
   siteMetadata: {
     title: 'Noob Hustle',
     description:
       'An average dude figuring out how to build a side income online, and showing you everything along the way.',
-    author: '@gatsbyjs'
+    author: '@gatsbyjs',
+    url: 'https://noobhustle.com',
+    twitter: '@noobhustle'
   },
   plugins: [
+    '@contentful/gatsby-transformer-contentful-richtext',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: []
+      }
+    },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: contentfulOptions
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',

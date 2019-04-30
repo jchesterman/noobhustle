@@ -1,8 +1,9 @@
 import CircularProgress from '@material-ui/core/CircularProgress';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
-import {Button, Input, Typography} from '@material-ui/core';
+import {Button, TextField, Typography} from '@material-ui/core';
 import {FaFrown, FaGrinBeam} from 'react-icons/fa';
 
 import validator from 'email-validator';
@@ -128,25 +129,38 @@ class SubscribeForm extends React.Component {
     return (
       <>
         <form onSubmit={this._handleSubmit}>
-          <Input
+          <TextField
             autoFocus
             onChange={this._handleNameChange}
-            style={{marginRight: '30px', marginBottom: '20px', width: '65%'}}
+            style={{
+              backgroundColor: '#fff',
+              borderRadius: '4px',
+              marginBottom: '20px',
+              width: '100%'
+            }}
             placeholder="Enter your first name"
+            variant="outlined"
           />
-          <Input
+          <TextField
             onChange={this._handleEmailChange}
-            style={{marginRight: '30px', marginBottom: '20px', width: '65%'}}
+            style={{
+              backgroundColor: '#fff',
+              borderRadius: '4px',
+              marginBottom: '20px',
+              width: '100%'
+            }}
             placeholder="Enter your email"
+            variant="outlined"
           />
           <br />
           <StyledButton
             color="primary"
             disabled={this.state.checking ? true : false}
+            style={{width: '100%'}}
             type="submit"
             variant="contained"
           >
-            Sign Up
+            {this.props.cta}
           </StyledButton>
           {this.state.checking && (
             <LoaderContain>
@@ -176,5 +190,9 @@ class SubscribeForm extends React.Component {
     );
   }
 }
+
+SubscribeForm.propTypes = {
+  cta: PropTypes.string
+};
 
 export default SubscribeForm;
