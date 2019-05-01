@@ -16,6 +16,38 @@ import {
 } from 'react-share';
 import {Typography} from '@material-ui/core';
 
+const ShareCount = styled.div({
+  float: 'left',
+  borderRight: '1px solid #ddd',
+  paddingRight: '8px',
+  marginRight: '8px'
+});
+
+const ShareText = styled(Typography)({
+  float: 'right',
+  color: theme.palette.secondary.light,
+  '@media(max-width: 599px)': {
+    display: 'none'
+  }
+});
+
+const ShareIcon = styled.span({
+  color: theme.palette.secondary.light,
+  position: 'relative',
+  top: '2px',
+  marginRight: '8px'
+});
+
+const SocialShare = styled.div({
+  display: 'inline-block',
+  marginRight: '6px',
+  cursor: 'pointer',
+  position: 'relative',
+  '&:hover': {
+    top: '-2px'
+  }
+});
+
 class Share extends React.Component {
   constructor(props) {
     super(props);
@@ -39,38 +71,6 @@ class Share extends React.Component {
   }
 
   render() {
-    const ShareCount = styled.div({
-      float: 'left',
-      borderRight: '1px solid #ddd',
-      paddingRight: '8px',
-      marginRight: '8px'
-    });
-
-    const ShareText = styled(Typography)({
-      float: 'right',
-      color: theme.palette.secondary.light,
-      '@media(max-width: 599px)': {
-        display: 'none'
-      }
-    });
-
-    const ShareIcon = styled.span({
-      color: theme.palette.secondary.light,
-      position: 'relative',
-      top: '2px',
-      marginRight: '8px'
-    });
-
-    const SocialShare = styled.div({
-      display: 'inline-block',
-      marginRight: '6px',
-      cursor: 'pointer',
-      position: 'relative',
-      '&:hover': {
-        top: '-2px'
-      }
-    });
-
     return (
       <div>
         <ShareCount style={{display: 'none'}}>
