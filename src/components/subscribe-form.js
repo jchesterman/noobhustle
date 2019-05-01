@@ -1,56 +1,75 @@
 import CircularProgress from '@material-ui/core/CircularProgress';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {Component} from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
 import {Button, TextField, Typography} from '@material-ui/core';
 import {FaFrown, FaGrinBeam} from 'react-icons/fa';
-
 import validator from 'email-validator';
 
-class SubscribeForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checking: false,
-      name: null,
-      email: null,
-      message: null
-    };
-    this._handleNameChange = this._handleNameChange.bind(this);
-    this._handleEmailChange = this._handleEmailChange.bind(this);
-  }
+const StyledButton = styled(Button)({
+  textTransform: 'none',
+  fontSize: '1.2rem',
+  marginBottom: 16
+});
 
-  _handleNameChange(event) {
-    this.setState({name: event.target.value});
-  }
+const Message = styled.div({
+  marginTop: 10
+});
 
-  _handleEmailChange(event) {
-    this.setState({email: event.target.value});
-  }
+const LoaderContain = styled.div({
+  position: 'absolute',
+  float: 'left',
+  marginTop: -60,
+  marginLeft: 140
+});
+
+const SyledFaGrinBeam = styled(FaGrinBeam)({
+  marginBottom: 10
+});
+
+const StyledFaFrown = styled(FaFrown)({
+  marginBottom: 10
+});
+
+export default class SubscribeForm extends Component {
+  state = {
+    success: false,
+    checking: false,
+    name: null,
+    email: null,
+    message: null
+  };
+
+  _handleInputChange = event => {
+    this.setState({[event.target.name]: event.target.value});
+  };
 
   _validateForm() {
     this.setState({success: false});
     if (!this.state.email) {
       this.setState({
+        checking: false,
         message: 'Please enter your email'
       });
-      this.setState({checking: false});
       return false;
     }
+    
     if (!validator.validate(this.state.email)) {
       this.setState({
+        checking: false,
         message: `hey... <strong>${
           this.state.email
         }</strong> isn't a valid email...`
       });
-      this.setState({checking: false});
       return false;
     }
 
     if (!this.state.name) {
-      this.setState({message: 'Please enter your name'});
-      this.setState({checking: false});
+      this.setState({
+        checking: false,
+        message: 'Please enter your name'
+      });
       return false;
     }
 
@@ -104,34 +123,13 @@ class SubscribeForm extends React.Component {
   };
 
   render() {
-    const StyledButton = styled(Button)({
-      textTransform: 'none',
-      fontSize: '1.2rem',
-      marginBottom: '16px'
-    });
-    const Message = styled.div({
-      marginTop: '10px',
-      color: this.state.success ? 'green' : theme.palette.primary.main
-    });
-    const LoaderContain = styled.div({
-      position: 'absolute',
-      float: 'left',
-      marginTop: '-60px',
-      marginLeft: '140px'
-    });
-    const SyledFaGrinBeam = styled(FaGrinBeam)({
-      marginBottom: '10px'
-    });
-
-    const StyledFaFrown = styled(FaFrown)({
-      marginBottom: '10px'
-    });
     return (
       <>
         <form onSubmit={this._handleSubmit}>
           <TextField
             autoFocus
-            onChange={this._handleNameChange}
+            name="name"
+            onChange={this._handleInputChange}
             style={{
               backgroundColor: '#fff',
               borderRadius: '4px',
@@ -142,7 +140,9 @@ class SubscribeForm extends React.Component {
             variant="outlined"
           />
           <TextField
-            onChange={this._handleEmailChange}
+            name="email"
+            type="email"
+            onChange={this._handleInputChange}
             style={{
               backgroundColor: '#fff',
               borderRadius: '4px',
@@ -169,7 +169,11 @@ class SubscribeForm extends React.Component {
           )}
         </form>
         {this.state.message && (
-          <Message>
+          <Message
+            style={{
+              color: this.state.success ? 'green' : theme.palette.primary.main
+            }}
+          >
             {this.state.success ? (
               <SyledFaGrinBeam color="green" size="1.5rem" style="far" />
             ) : (
@@ -194,5 +198,3 @@ class SubscribeForm extends React.Component {
 SubscribeForm.propTypes = {
   cta: PropTypes.string
 };
-
-export default SubscribeForm;
