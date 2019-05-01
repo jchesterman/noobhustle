@@ -175,9 +175,9 @@ export default class SubscribeForm extends Component {
             }}
           >
             {this.state.success ? (
-              <SyledFaGrinBeam color="green" size="1.5rem" />
+              <SyledFaGrinBeam color="green" size={20} />
             ) : (
-              <StyledFaFrown color={theme.palette.primary.main} size="1.5rem" />
+              <StyledFaFrown color={theme.palette.primary.main} size={20} />
             )}
             <Typography
               color="inherit"
