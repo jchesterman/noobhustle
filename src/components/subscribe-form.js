@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styled from '@emotion/styled';
 import theme from '../themes/default';
+import validator from 'email-validator';
 import {Button, TextField, Typography} from '@material-ui/core';
 import {FaFrown, FaGrinBeam} from 'react-icons/fa';
-import validator from 'email-validator';
 
 const StyledButton = styled(Button)({
   textTransform: 'none',
@@ -54,7 +54,7 @@ export default class SubscribeForm extends Component {
       });
       return false;
     }
-    
+
     if (!validator.validate(this.state.email)) {
       this.setState({
         checking: false,
@@ -77,7 +77,7 @@ export default class SubscribeForm extends Component {
     return true;
   }
 
-  _handleSubmit = () => {
+  _handleSubmit = event => {
     event.preventDefault();
     this.setState({checking: true});
     const valid = this._validateForm();
