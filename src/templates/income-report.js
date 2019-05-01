@@ -11,7 +11,6 @@ import styled from '@emotion/styled';
 import theme from '../themes/default';
 import {DiscussionEmbed} from 'disqus-react';
 import {Divider, Grid, List, ListItem, Typography} from '@material-ui/core';
-import {FaTwitter} from 'react-icons/fa';
 import {Section} from '../components/common';
 import {graphql} from 'gatsby';
 import {withProps} from 'recompose';
@@ -56,31 +55,6 @@ const StyledH3 = styled(Typography)({
   fontWeight: '600',
   fontSize: '1.4em',
   marginBottom: '16px'
-});
-
-const SocialShare = styled.div({
-  display: 'inline-block',
-  marginRight: '6px',
-  cursor: 'pointer',
-  position: 'relative',
-  '&:hover': {
-    top: '-2px'
-  }
-});
-
-const ShareText = styled(Typography)({
-  float: 'right',
-  color: theme.palette.secondary.light,
-  '@media(max-width: 599px)': {
-    display: 'none'
-  }
-});
-
-const ShareIcon = styled.span({
-  color: theme.palette.secondary.light,
-  position: 'relative',
-  top: '2px',
-  marginRight: '8px'
 });
 
 const renderAst = new rehypeReact({
@@ -149,22 +123,6 @@ class IncomeReport extends Component {
               <Divider />
               <br />
               <div>{renderAst(body.childMarkdownRemark.htmlAst)}</div>
-              <br />
-              <SocialShare
-                className="button share-button twitter-share-button"
-                data-network="twitter"
-                style={{
-                  background: '#38A1F3',
-                  padding: '6px 8px',
-                  borderRadius: '4px'
-                }}
-              >
-                <ShareIcon>
-                  <FaTwitter />
-                </ShareIcon>
-                <ShareText>Tweet This</ShareText>
-              </SocialShare>
-              <br />
               <br />
               <Divider />
               <DiscussionEmbed
