@@ -246,7 +246,7 @@ class IndexPage extends React.Component {
                     </Typography>
                     <StyledButton
                       color="primary"
-                      href={process.env.BLUEHOST_AFFILIATE_LINK}
+                      href={process.env.GATSBY_BLUEHOST_AFFILIATE_LINK}
                       target="_blank"
                       variant="contained"
                     >
