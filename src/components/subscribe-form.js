@@ -89,7 +89,7 @@ export default class SubscribeForm extends Component {
     fetch(proxyUrl + targetUrl, {
       method: 'POST',
       headers: {
-        'X-Auth-Token': `api-key ${process.env.GETRESPONSE_API_KEY}`,
+        'X-Auth-Token': `api-key ${process.env.GATSBY_GETRESPONSE_API_KEY}`,
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
