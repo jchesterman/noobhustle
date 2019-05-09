@@ -41,12 +41,14 @@ const IndexPage = props => (
 
 export const pageQuery = graphql`
   query HomePageQuery {
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: {fields: [createdAt], order: DESC}) {
       edges {
         node {
           slug
           title
+          subtitle
           publishDate(formatString: "MMMM Do, YYYY")
+          updatedAt(formatString: "MMMM Do, YYYY")
           heroImage {
             file {
               url

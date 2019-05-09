@@ -44,7 +44,6 @@ class AltHero extends React.Component {
               style={{width: '100%'}}
               Tag="section"
               fluid={imageData}
-              backgroundColor={'#040e18'}
             >
               <div
                 style={{

@@ -31,6 +31,14 @@ const FeatureContain = styled(Grid)({
   }
 });
 
+const PostSubHeading = styled.span({
+  fontSize: '0.6em',
+  textTransform: 'uppercase',
+  display: 'block',
+  fontWeight: '400',
+  marginBottom: '10px'
+});
+
 const RecentPosts = props =>
   props.posts.map((item, key) => {
     return (
@@ -70,6 +78,9 @@ const RecentPosts = props =>
             >
               <Typography gutterBottom style={{fontWeight: '600'}} variant="h5">
                 {item.node.title}
+                {item.node.subtitle && (
+                  <PostSubHeading>{item.node.subtitle}</PostSubHeading>
+                )}
               </Typography>
             </Link>
             <Typography align="left" paragraph>

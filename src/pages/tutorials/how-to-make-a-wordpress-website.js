@@ -209,7 +209,7 @@ class IndexPage extends React.Component {
                     <Typography color="textSecondary" variant="h6">
                       We&apos;re going to use{' '}
                       <a
-                        href={process.env.BLUEHOST_AFFILIATE_LINK}
+                        href={process.env.GATSBY_BLUEHOST_AFFILIATE_LINK}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -225,7 +225,7 @@ class IndexPage extends React.Component {
                       Right now they&apos;re having a{' '}
                       <strong>
                         <a
-                          href={process.env.BLUEHOST_AFFILIATE_LINK}
+                          href={process.env.GATSBY_BLUEHOST_AFFILIATE_LINK}
                           rel="noopener noreferrer"
                           target="_blank"
                         >
