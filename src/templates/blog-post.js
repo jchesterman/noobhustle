@@ -15,11 +15,20 @@ import {graphql} from 'gatsby';
 import {withProps} from 'recompose';
 
 const PostHeading = styled(Typography)({
-  fontSize: '3rem'
+  fontSize: '3em',
+  fontWeight: '600'
+});
+
+const PostSubHeading = styled.span({
+  fontSize: '0.6em',
+  textTransform: 'uppercase',
+  display: 'block',
+  fontWeight: '400',
+  marginBottom: '10px'
 });
 
 const mainHeading = styled(Typography)({
-  fontWeight: '400'
+  fontWeight: '600'
 });
 
 const StyledList = styled(List)({
@@ -28,11 +37,26 @@ const StyledList = styled(List)({
   paddingTop: '0'
 });
 
+const OlStyledList = styled(List)({
+  listStyle: 'decimal',
+  marginLeft: '22px',
+  paddingTop: '0',
+  marginBottom: '20px'
+});
+
 const StyledListItem = styled(ListItem)({
   display: 'list-item',
   padding: '5px 16px 5px 4px',
-  fontFamily: '"Libre Franklin", serif',
-  fontSize: '0.875rem'
+  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  fontSize: '1.2em'
+});
+
+const StyledH3 = styled(Typography)({
+  fontSize: '2.2em',
+  borderTop: '1px solid #ddd',
+  borderBottom: '1px solid #ddd',
+  padding: '10px',
+  background: '#f4f4f4'
 });
 
 const NewsletterContain = styled.div({
@@ -50,16 +74,30 @@ const StyledParagraph = styled(Typography)({
   fontSize: '1.2em'
 });
 
+const StyledImg = styled.img({
+  maxWidth: '100%'
+});
+
+const StyledHr = styled.hr({
+  width: '100%',
+  border: 'none',
+  height: 1,
+  background: '#ddd'
+});
+
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
     h1: withProps({variant: 'h1', gutterBottom: true})(mainHeading),
     h2: withProps({variant: 'h2', gutterBottom: true})(Typography),
-    h3: withProps({variant: 'h3', gutterBottom: true})(Typography),
+    h3: withProps({variant: 'h3', gutterBottom: true})(StyledH3),
     h4: withProps({variant: 'h4', gutterBottom: true})(Typography),
     p: withProps({paragraph: true})(StyledParagraph),
+    ol: withProps({component: 'ol'})(OlStyledList),
     ul: withProps({component: 'ul'})(StyledList),
-    li: StyledListItem
+    li: StyledListItem,
+    img: StyledImg,
+    hr: StyledHr
   }
 }).Compiler;
 
@@ -68,10 +106,12 @@ class BlogPost extends Component {
     const {
       id,
       title,
+      subtitle,
       slug,
       category,
       metaTitle,
       createdAt,
+      updatedAt,
       heroImage,
       body
     } = this.props.data.contentfulBlogPost;
@@ -88,8 +128,14 @@ class BlogPost extends Component {
         <Section>
           <Grid container spacing={40}>
             <Grid item sm={8} xs={12}>
-              <PostHeading variant="h1">{title}</PostHeading>
-              <Typography paragraph>{createdAt}</Typography>
+              <PostHeading variant="h1">
+                {title}
+                <PostSubHeading>{subtitle}</PostSubHeading>
+              </PostHeading>
+              <Typography paragraph>
+                Posted on {createdAt} /{' '}
+                <strong>Last updated {updatedAt}</strong>
+              </Typography>
               <Share
                 socialConfig={{
                   twitterHandle: '',
@@ -143,8 +189,11 @@ export const pageQuery = graphql`
   query blogPostQuery($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug}) {
       title
+      subtitle
+      metaTitle
       slug
-      createdAt(formatString: "MMMM DD, YYYY")
+      createdAt(formatString: "MMMM Do, YYYY")
+      updatedAt(formatString: "MMMM Do, YYYY")
       heroImage {
         sizes(maxWidth: 800) {
           ...GatsbyContentfulSizes
