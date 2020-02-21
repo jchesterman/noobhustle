@@ -105,6 +105,12 @@ module.exports = {
           //exclude: ['/preview/**', '/do-not-track/me/too/']
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-google-adsense',
+      options: {
+        publisherId: 'ca-pub-6240096213960000'
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
